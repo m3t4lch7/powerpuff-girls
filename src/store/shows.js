@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { createSelector } from 'reselect';
 import { apiCallBegan } from './api';
 
-const url = process.env.SHOWS_URL;
+const url = process.env.REACT_APP_SHOWS_URL;
 
 const slice = createSlice({
   name: "shows",
@@ -27,6 +28,8 @@ const slice = createSlice({
 
 export const { showsRequested, showsReceived, showsRequestFailed } = slice.actions;
 
+export default slice.reducer;
+
 export const loadShows = () => (dispatch, getState) => {
   return dispatch(
     apiCallBegan({
@@ -37,3 +40,9 @@ export const loadShows = () => (dispatch, getState) => {
     }),
   );
 };
+
+export const getShows = createSelector(
+  state => state.shows,
+  (shows) => shows.list
+);
+

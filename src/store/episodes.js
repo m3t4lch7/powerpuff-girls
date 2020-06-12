@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { createSelector } from 'reselect';
 import { apiCallBegan } from './api';
 
-const url = process.env.EPISODES_URL;
+const url = process.env.REACT_APP_EPISODES_URL;
 
 const slice = createSlice({
   name: "episodes",
@@ -27,6 +28,8 @@ const slice = createSlice({
 
 export const { episodesRequested, episodesReceived, episodesRequestFailed } = slice.actions;
 
+export default slice.reducer;
+
 export const loadEpisodes = () => (dispatch, getState) => {
   return dispatch(
     apiCallBegan({
@@ -37,3 +40,7 @@ export const loadEpisodes = () => (dispatch, getState) => {
     }),
   );
 };
+
+export const getEpisodes = createSelector(
+  state => state.episodes,
+);
