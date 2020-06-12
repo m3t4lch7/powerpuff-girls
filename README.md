@@ -1,3 +1,5 @@
+For the sake of simplicity of the setup of the project - I am pushing .env file, which normally I would not push :)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
