@@ -1,0 +1,11 @@
+@import '../../styles/colors';
+@import '../../styles/spacing';
+
+.Summary {
+  background-color: $color-logo-inner;
+  opacity: 0.5;
+  color: $color-white;
+  padding: 0 $padding-main;
+  margin: 0 $padding-main;
+  border-radius: 10px;
+}

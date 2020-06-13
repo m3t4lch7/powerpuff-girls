@@ -1,9 +1,10 @@
 import React from 'react';
 
+import './style.scss';
+
 const Summary = ({ summary }) => {
   return (
     <div className="Summary">
-      <div>Summary:</div>
       {/* eslint-disable-next-line react/no-danger */}
       <div dangerouslySetInnerHTML={{ __html: summary }} />
     </div>

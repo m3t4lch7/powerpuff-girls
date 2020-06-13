@@ -27,8 +27,8 @@ const ShowDetails = ({ match: { params } = {} }) => {
 
   return (
     <div className="ShowDetails">
-      <Title title={show.name} />
       <Cover cover={show.image} />
+      <Title title={show.name} />
       <Genres genres={show.genres} />
       <Summary summary={show.summary} />
       <Episodes showId={params.showId} />

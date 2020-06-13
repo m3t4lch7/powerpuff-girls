@@ -18,18 +18,14 @@ const EpisodeDetails = ({ match: { params } = {} }) => {
     dispatch(loadEpisodeDetails(params.showId, params.episodeId));
   }, []);
 
-  // Add loader
-  // if (loading) {
-  // }
-
   if (!episode) {
     return <PageNotFound />;
   }
 
   return (
     <div className="EpisodeDetails">
-      <Title title={episode.name} />
       <Cover cover={episode.image} />
+      <Title title={episode.name} />
       <Summary summary={episode.summary} />
     </div>
   );

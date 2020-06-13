@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+@import '../../styles/spacing';
+
+.EpisodesList {
+  &__cover {
+    padding: $padding-main;
+  }
+
+  a {
+    color: $color-white;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+  }
+
+  &:nth-child(3n+0) {
+    background-color: $color-bubbles;
+  }
+
+  &:nth-child(3n+1) {
+    background-color: $color-blossom;
+  }
+
+  &:nth-child(3n+2) {
+    background-color: $color-buttercup;
+  }
+}
+

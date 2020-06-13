@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './style.scss';
+
 const Title = ({ title }) => {
   return (
-    <div className="Title">
+    <h1 className="Title">
       {title}
-    </div>
+    </h1>
   );
 };
 

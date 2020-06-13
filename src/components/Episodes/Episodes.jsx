@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { getEpisodes, loadEpisodes } from '../../store/episodes';
 
+import EpisodesList from '../EpisodesList/EpisodesList';
 import Cover from '../Cover/Cover';
 
 import './style.scss';
@@ -20,15 +21,7 @@ const Episodes = ({ showId }) => {
     <div className="Episodes">
       <div className="Episodes__title">Episodes :</div>
       <div className="Episodes__list">
-        {episodes.map((episode, index) => (
-            <div className="Episode__list-item" key={index}>
-              <Link to={`/shows/${showId}/episodes/${episode.id}`}>
-                <Cover cover={episode.image} small />
-                <div className="Episode__list-item-title">{episode.name}</div>
-              </Link>
-            </div>
-          ),
-        )}
+        <EpisodesList episodes={episodes} showId={showId} />
       </div>
     </div>
   );

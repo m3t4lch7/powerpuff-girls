@@ -1,0 +1,24 @@
+@import '../../styles/colors';
+
+.Cover {
+  background-color: $color-black;
+  //margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__image {
+    object-fit: cover;
+    height: 100vh;
+  }
+
+  &--small {
+    background-color: transparent !important;
+    justify-content: flex-start;
+  }
+
+  &--small > &__image {
+    width: 200px;
+    height: 150px;
+  }
+}

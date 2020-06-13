@@ -1,0 +1,16 @@
+@import '../../styles/colors';
+@import '../../styles/spacing';
+
+$padding-item: 5px 15px;
+
+.Genres {
+  display: flex;
+
+  &__item {
+    background-color: $color-logo-inner;
+    color: $color-white;
+    border-radius: 10px;
+    padding: $padding-item;
+    margin: $padding-small;
+  }
+}
