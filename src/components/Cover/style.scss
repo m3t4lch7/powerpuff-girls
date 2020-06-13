@@ -1,0 +1,49 @@
+@import '../../styles/colors';
+
+$height-image: 100vh;
+$height-image-small: 100px;
+$height-image-medium: 350px;
+
+$media-query-breakpoint-mobile: 425px;
+
+$width-image-mobile: 80%;
+$width-image-mobile-medium: 100%;
+$width-image-medium: 550px;
+$width-image-small: 150px;
+
+.Cover {
+  background-color: $color-black;
+  display: flex;
+  justify-content: center;
+  width: $width-image-mobile-medium;
+
+  &__image {
+    height: $height-image;
+    object-fit: cover;
+
+    @media (max-width: $media-query-breakpoint-mobile) {
+      height: auto;
+      width: $width-image-mobile;
+    }
+  }
+
+  &--small {
+    background-color: transparent !important;
+    justify-content: flex-start;
+  }
+
+  &--small > &__image {
+    height: $height-image-small;
+    width: $width-image-small;
+  }
+
+  &--medium > &__image {
+    max-height:$height-image-medium;
+    max-width: $width-image-medium;
+
+    @media (max-width: $media-query-breakpoint-mobile) {
+      height: auto;
+      width:$width-image-mobile-medium;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+@import '../../styles/spacing';
+
+.EpisodesList {
+
+  &__item {
+    padding: $padding-medium;
+
+    a {
+      color: $color-black;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+    }
+
+    &:nth-child(odd) {
+      background-color: $color-row-odd;
+    }
+
+    &:nth-child(even) {
+      background-color: $color-row-even;
+    }
+
+    &--content {
+      padding-left: $padding-medium;
+
+      &-title {
+        font-weight: bold;
+      }
+    }
+  }
+}
+

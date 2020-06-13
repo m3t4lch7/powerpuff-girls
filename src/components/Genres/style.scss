@@ -1,0 +1,29 @@
+@import '../../styles/colors';
+@import '../../styles/spacing';
+
+$border-radius-item: 10px;
+$padding-item: 5px 15px;
+
+.Genres {
+  display: flex;
+  padding: $padding-medium;
+
+  &__item {
+    color: $color-white;
+    border-radius: $border-radius-item;
+    margin: $padding-small;
+    padding: $padding-item;
+
+    &:nth-child(3n+1) {
+      background-color: $color-blossom;
+    }
+
+    &:nth-child(3n+3) {
+      background-color: $color-buttercup;
+    }
+
+    &:nth-child(3n+2) {
+      background-color: $color-bubbles;
+    }
+  }
+}
