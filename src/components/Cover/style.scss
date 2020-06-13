@@ -2,7 +2,6 @@
 
 .Cover {
   background-color: $color-black;
-  //margin: auto;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -10,16 +9,16 @@
   &__image {
     object-fit: cover;
     height: 100vh;
+
+    @media (max-width: 425px) {
+      width: 80%;
+      height: auto;
+    }
   }
 
   &--small {
     background-color: transparent !important;
     justify-content: flex-start;
-  }
-
-  &--medium {
-    //background-color: transparent !important;
-    //justify-content: flex-start;
   }
 
   &--small > &__image {
@@ -28,7 +27,12 @@
   }
 
   &--medium > &__image {
-    width: 550px;
-    height: 350px;
+    max-width: 550px;
+    max-height: 350px;
+
+    @media (max-width: 425px) {
+      width: 100%;
+      height: auto;
+    }
   }
 }
