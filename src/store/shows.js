@@ -16,7 +16,21 @@ const slice = createSlice({
     },
 
     showsReceived: (shows, action) => {
-      shows.list = action.payload;
+      // const showsNew = action.payload.map(({show}) => {
+      //   return show;
+      // });
+
+      // let showsNew = [];
+      // action.payload.forEach(function(show) {
+      //   showsNew[show.show.id] = show.show;
+      // });
+      //
+      // console.log(showsNew);
+
+      shows.list = action.payload.map(({show}) => {
+        return show;
+      });
+
       shows.loading = false;
     },
 
@@ -27,8 +41,6 @@ const slice = createSlice({
 });
 
 export const { showsRequested, showsReceived, showsRequestFailed } = slice.actions;
-
-export default slice.reducer;
 
 export const loadShows = () => (dispatch, getState) => {
   return dispatch(
@@ -46,3 +58,9 @@ export const getShows = createSelector(
   (shows) => shows.list
 );
 
+export const getShowDetails = id => createSelector(
+  state => state.shows,
+  (shows) => shows.list.find(show => show.id === parseInt(id))
+);
+
+export default slice.reducer;

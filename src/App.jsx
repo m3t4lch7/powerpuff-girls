@@ -1,9 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
-import Shows from './screens/Shows/Shows';
 import ShowDetails from './screens/ShowDetails/ShowDetails';
 import EpisodeDetails from './screens/EpisodeDetails/EpisodeDetails';
 
@@ -17,9 +16,11 @@ function App() {
       <NavBar />
       <BrowserRouter>
         <Switch>
-          <Route component={Shows} path="/" exact />
-          <Route component={ShowDetails} path="/shows/:id" exact />
-          <Route component={EpisodeDetails} path="/episodes/:id" exact />
+          <Route path="/" exact>
+            <Redirect to={`/shows/${process.env.REACT_APP_SHOW_POWERPUFF_GIRLS_ID}`} />
+          </Route>
+          <Route component={ShowDetails} path="/shows/:showId" exact />
+          <Route component={EpisodeDetails} path="/shows/:showId/episodes/:episodeId" exact />
         </Switch>
       </BrowserRouter>
     </Provider>
