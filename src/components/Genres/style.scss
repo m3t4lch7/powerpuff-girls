@@ -5,12 +5,24 @@ $padding-item: 5px 15px;
 
 .Genres {
   display: flex;
+  padding: $padding-medium;
 
   &__item {
-    background-color: $color-logo-inner;
     color: $color-white;
     border-radius: 10px;
     padding: $padding-item;
     margin: $padding-small;
+
+    &:nth-child(3n+1) {
+      background-color: $color-blossom;
+    }
+
+    &:nth-child(3n+3) {
+      background-color: $color-buttercup;
+    }
+
+    &:nth-child(3n+2) {
+      background-color: $color-bubbles;
+    }
   }
 }

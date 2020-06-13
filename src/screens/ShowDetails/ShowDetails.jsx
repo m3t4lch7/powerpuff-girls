@@ -29,8 +29,8 @@ const ShowDetails = ({ match: { params } = {} }) => {
     <div className="ShowDetails">
       <Cover cover={show.image} />
       <Title title={show.name} />
-      <Genres genres={show.genres} />
       <Summary summary={show.summary} />
+      <Genres genres={show.genres} />
       <Episodes showId={params.showId} />
     </div>
   );

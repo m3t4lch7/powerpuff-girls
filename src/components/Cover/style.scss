@@ -17,8 +17,18 @@
     justify-content: flex-start;
   }
 
+  &--medium {
+    //background-color: transparent !important;
+    //justify-content: flex-start;
+  }
+
   &--small > &__image {
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
+  }
+
+  &--medium > &__image {
+    width: 550px;
+    height: 350px;
   }
 }

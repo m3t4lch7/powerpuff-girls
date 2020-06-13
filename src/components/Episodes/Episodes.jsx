@@ -19,7 +19,7 @@ const Episodes = ({ showId }) => {
 
   return (
     <div className="Episodes">
-      <div className="Episodes__title">Episodes :</div>
+      <h2 className="Episodes__title">Episodes:</h2>
       <div className="Episodes__list">
         <EpisodesList episodes={episodes} showId={showId} />
       </div>

@@ -1,6 +1,18 @@
 @import './styles/colors';
 
 .App {
-  //background-color: $color-black;
-  //color: $color-white;
+  color: $color-black;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-logo-inner;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-logo-outer-black;
 }

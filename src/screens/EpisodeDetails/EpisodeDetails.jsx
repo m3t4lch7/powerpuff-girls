@@ -24,7 +24,7 @@ const EpisodeDetails = ({ match: { params } = {} }) => {
 
   return (
     <div className="EpisodeDetails">
-      <Cover cover={episode.image} />
+      <Cover cover={episode.image} medium />
       <Title title={episode.name} />
       <Summary summary={episode.summary} />
     </div>
