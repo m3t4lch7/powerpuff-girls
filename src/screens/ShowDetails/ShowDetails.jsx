@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getShowDetails, loadShows } from '../../store/shows';
@@ -34,6 +35,14 @@ const ShowDetails = ({ match: { params } = {} }) => {
       <Episodes showId={params.showId} />
     </div>
   );
+};
+
+ShowDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      showId: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default ShowDetails;

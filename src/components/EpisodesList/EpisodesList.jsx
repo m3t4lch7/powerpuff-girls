@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Cover from '../Cover/Cover';
@@ -23,5 +24,20 @@ const EpisodesList = ({ episodes, showId }) => (
     ))}
   </div>
 );
+
+EpisodesList.propTypes = {
+  episodes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      image: PropTypes.shape({
+        original: PropTypes.string,
+      }),
+      name: PropTypes.string,
+      season: PropTypes.number,
+      airdate: PropTypes.string,
+    }),
+  ).isRequired,
+  showId: PropTypes.string.isRequired,
+};
 
 export default EpisodesList;

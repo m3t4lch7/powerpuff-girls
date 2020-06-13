@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getEpisodeDetails, loadEpisodeDetails } from '../../store/episodes';
 
-import Title from '../../components/Title/Title';
-import PageNotFound from '../PageNotFound/PageNotFound';
 import Cover from '../../components/Cover/Cover';
+import PageNotFound from '../PageNotFound/PageNotFound';
 import Summary from '../../components/Summary/Summary';
+import Title from '../../components/Title/Title';
 
 import './style.scss';
 
@@ -29,6 +30,15 @@ const EpisodeDetails = ({ match: { params } = {} }) => {
       <Summary summary={episode.summary} />
     </div>
   );
+};
+
+EpisodeDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      episodeId: PropTypes.string,
+      showId: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default EpisodeDetails;

@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { getEpisodes, loadEpisodes } from '../../store/episodes';
 
 import EpisodesList from '../EpisodesList/EpisodesList';
-import Cover from '../Cover/Cover';
 
 import './style.scss';
 
@@ -25,6 +24,10 @@ const Episodes = ({ showId }) => {
       </div>
     </div>
   );
+};
+
+Episodes.propTypes = {
+  showId: PropTypes.string.isRequired,
 };
 
 export default Episodes;
