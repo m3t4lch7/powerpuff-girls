@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createSelector } from 'reselect';
 import { apiCallBegan } from './api';
 
-const url = process.env.REACT_APP_SHOWS_URL;
+const url = process.env.REACT_APP_SHOWS_SEARCH_GIRLS_URL;
 
+// Reducers
 const slice = createSlice({
   name: "shows",
   initialState: {
@@ -40,6 +41,7 @@ const slice = createSlice({
   }
 });
 
+// Actions
 export const { showsRequested, showsReceived, showsRequestFailed } = slice.actions;
 
 export const loadShows = () => (dispatch, getState) => {

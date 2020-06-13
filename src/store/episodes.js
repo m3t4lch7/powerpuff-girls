@@ -5,6 +5,7 @@ import { apiCallBegan } from './api';
 const showUrl = process.env.REACT_APP_SHOWS_URL;
 const url = process.env.REACT_APP_EPISODES_URL;
 
+// Reducers
 const slice = createSlice({
   name: "episodes",
   initialState: {
@@ -17,6 +18,8 @@ const slice = createSlice({
     },
 
     episodesReceived: (episodes, action) => {
+      // console.log(action.payload);
+
       episodes.list = action.payload;
       episodes.loading = false;
     },
@@ -24,15 +27,38 @@ const slice = createSlice({
     episodesRequestFailed: (episodes, action) => {
       episodes.loading = false;
     },
+
+    episodeDetailsRequested: (episodes, action) => {
+      episodes.loading = true;
+    },
+
+    episodeDetailsReceived: (episodes, action) => {
+      // console.log(action.payload);
+
+      episodes.list = [action.payload];
+      episodes.loading = false;
+    },
+
+    episodeDetailsRequestFailed: (episodes, action) => {
+      episodes.loading = false;
+    },
   }
 });
 
-export const { episodesRequested, episodesReceived, episodesRequestFailed } = slice.actions;
+// Actions
+export const {
+  episodesRequested,
+  episodesReceived,
+  episodesRequestFailed,
+  episodeDetailsRequested,
+  episodeDetailsReceived,
+  episodeDetailsRequestFailed
+} = slice.actions;
 
 export const loadEpisodes = (showId) => (dispatch, getState) => {
   return dispatch(
     apiCallBegan({
-      url:  showUrl + "/" + showId + url,
+      url:  `${showUrl}/${showId}${url}`,
       onStart: episodesRequested.type,
       onSuccess: episodesReceived.type,
       onError: episodesRequestFailed.type
@@ -40,8 +66,26 @@ export const loadEpisodes = (showId) => (dispatch, getState) => {
   );
 };
 
+export const loadEpisodeDetails = (showId, episodeId) => (dispatch, getState) => {
+  return dispatch(
+    apiCallBegan({
+      url:  `${url}/${episodeId}`,
+      onStart: episodeDetailsRequested.type,
+      onSuccess: episodeDetailsReceived.type,
+      onError: episodeDetailsRequestFailed.type
+    }),
+  );
+};
+
 export const getEpisodes = createSelector(
   state => state.episodes,
+  (episodes) => episodes.list
+);
+
+export const getEpisodeDetails = id => createSelector(
+  state => state.episodes,
+  // (episodes) => episodes
+  (episodes) => episodes.list.find(episode => episode.id === parseInt(id))
 );
 
 export default slice.reducer;
