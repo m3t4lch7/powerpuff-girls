@@ -84,7 +84,6 @@ export const getEpisodes = createSelector(
 
 export const getEpisodeDetails = id => createSelector(
   state => state.episodes,
-  // (episodes) => episodes
   (episodes) => episodes.list.find(episode => episode.id === parseInt(id))
 );
 

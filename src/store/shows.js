@@ -17,17 +17,6 @@ const slice = createSlice({
     },
 
     showsReceived: (shows, action) => {
-      // const showsNew = action.payload.map(({show}) => {
-      //   return show;
-      // });
-
-      // let showsNew = [];
-      // action.payload.forEach(function(show) {
-      //   showsNew[show.show.id] = show.show;
-      // });
-      //
-      // console.log(showsNew);
-
       shows.list = action.payload.map(({show}) => {
         return show;
       });

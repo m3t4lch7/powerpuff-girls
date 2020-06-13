@@ -14,24 +14,29 @@ import ShowDetails from './screens/ShowDetails/ShowDetails';
 // Other
 import PageNotFound from './screens/PageNotFound/PageNotFound';
 
+// Style
+// import style from 'App.style';
+
 const store = configureStore();
 
 function App() {
   return (
-    <Provider store={store}>
-      <NavBar />
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact>
-            {/* Making sure we get redirected to the correct page right after we run the project */}
-            <Redirect to={`/shows/${process.env.REACT_APP_SHOW_POWERPUFF_GIRLS_ID}`} />
-          </Route>
-          <Route component={ShowDetails} path="/shows/:showId" exact />
-          <Route component={EpisodeDetails} path="/shows/:showId/episodes/:episodeId" exact />
-          <Route component={PageNotFound} exact />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
+    <div className="App">
+      <Provider store={store}>
+        <NavBar />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact>
+              {/* Making sure we get redirected to the correct page right after we run the project */}
+              <Redirect to={`/shows/${process.env.REACT_APP_SHOW_POWERPUFF_GIRLS_ID}`} />
+            </Route>
+            <Route component={ShowDetails} path="/shows/:showId" exact />
+            <Route component={EpisodeDetails} path="/shows/:showId/episodes/:episodeId" exact />
+            <Route component={PageNotFound} exact />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 }
 

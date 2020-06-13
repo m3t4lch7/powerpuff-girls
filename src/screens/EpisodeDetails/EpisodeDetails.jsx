@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getEpisodeDetails, loadEpisodeDetails } from '../../store/episodes';
+
 import Title from '../../components/Title/Title';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Cover from '../../components/Cover/Cover';
@@ -11,20 +12,20 @@ const EpisodeDetails = ({ match: { params } = {} }) => {
   const dispatch = useDispatch();
   const episode = useSelector(getEpisodeDetails(params.episodeId));
 
-  console.log(episode);
-
   useEffect(() => {
     dispatch(loadEpisodeDetails(params.showId, params.episodeId));
   }, []);
 
   // Add loader
+  // if (loading) {
+  // }
 
   if (!episode) {
     return <PageNotFound />;
   }
 
   return (
-    <div>
+    <div className="EpisodeDetails">
       <Title title={episode.name} />
       <Cover cover={episode.image} />
       <Summary summary={episode.summary} />
