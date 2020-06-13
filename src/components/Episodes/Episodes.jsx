@@ -6,6 +6,8 @@ import { getEpisodes, loadEpisodes } from '../../store/episodes';
 
 import Cover from '../Cover/Cover';
 
+import './style.scss';
+
 const Episodes = ({ showId }) => {
   const dispatch = useDispatch();
   const episodes = useSelector(getEpisodes);
@@ -16,7 +18,7 @@ const Episodes = ({ showId }) => {
 
   return (
     <div className="Episodes">
-      <div className="Episodes__title">Episodes:</div>
+      <div className="Episodes__title">Episodes :</div>
       <div className="Episodes__list">
         {episodes.map((episode, index) => (
             <div className="Episode__list-item" key={index}>

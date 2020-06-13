@@ -8,6 +8,8 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 import Cover from '../../components/Cover/Cover';
 import Summary from '../../components/Summary/Summary';
 
+import './style.scss';
+
 const EpisodeDetails = ({ match: { params } = {} }) => {
   const dispatch = useDispatch();
   const episode = useSelector(getEpisodeDetails(params.episodeId));

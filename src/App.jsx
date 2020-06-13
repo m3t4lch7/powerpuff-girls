@@ -16,6 +16,7 @@ import PageNotFound from './screens/PageNotFound/PageNotFound';
 
 // Style
 // import style from 'App.style';
+import './App.style.scss';
 
 const store = configureStore();
 
@@ -23,8 +24,8 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <NavBar />
         <BrowserRouter>
+          <NavBar />
           <Switch>
             <Route path="/" exact>
               {/* Making sure we get redirected to the correct page right after we run the project */}

@@ -11,6 +11,8 @@ import Title from '../../components/Title/Title';
 
 import PageNotFound from '../PageNotFound/PageNotFound';
 
+import './style.scss';
+
 const ShowDetails = ({ match: { params } = {} }) => {
   const dispatch = useDispatch();
   const show = useSelector(getShowDetails(params.showId));
