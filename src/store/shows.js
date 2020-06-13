@@ -17,6 +17,7 @@ const slice = createSlice({
     },
 
     showsReceived: (shows, action) => {
+      // Small pre-processing, due to using a /search/shows?q=girls endpoint, which also returns a score and wraps all the episodes in additional object
       shows.list = action.payload.map(({show}) => {
         return show;
       });

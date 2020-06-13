@@ -11,10 +11,18 @@ import Title from '../../components/Title/Title';
 
 import './style.scss';
 
+/**
+ * Shows a few details of an episode with a given id.
+ *
+ * @param {Object} params - includes episode and show ids from the url
+ *
+ * @returns {*}
+ */
 const EpisodeDetails = ({ match: { params } = {} }) => {
   const dispatch = useDispatch();
   const episode = useSelector(getEpisodeDetails(params.episodeId));
 
+  // Load specific episode based on show and episode id
   useEffect(() => {
     dispatch(loadEpisodeDetails(params.showId, params.episodeId));
   }, []);

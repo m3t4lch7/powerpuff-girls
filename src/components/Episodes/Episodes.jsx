@@ -8,6 +8,13 @@ import EpisodesList from '../EpisodesList/EpisodesList';
 
 import './style.scss';
 
+/**
+ * Shows all episodes related to a show.
+ *
+ * @param {number} showId
+ *
+ * @returns {*}
+ */
 const Episodes = ({ showId }) => {
   const dispatch = useDispatch();
   const episodes = useSelector(getEpisodes);

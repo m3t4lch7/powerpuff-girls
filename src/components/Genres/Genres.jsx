@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import './style.scss';
 
+/**
+ * Shows a list of genres related to the show.
+ *
+ * @param {string[]} genres
+ *
+ * @returns {*}
+ */
 const Genres = ({ genres }) => {
   return (
     <div className="Genres">

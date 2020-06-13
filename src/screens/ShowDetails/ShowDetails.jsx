@@ -14,10 +14,18 @@ import PageNotFound from '../PageNotFound/PageNotFound';
 
 import './style.scss';
 
+/**
+ * Shows a few details of a show with a given id.
+ *
+ * @param {Object} params - includes episode and show id url
+ *
+ * @returns {*}
+ */
 const ShowDetails = ({ match: { params } = {} }) => {
   const dispatch = useDispatch();
   const show = useSelector(getShowDetails(params.showId));
 
+  // Load shows from the API
   useEffect(() => {
     dispatch(loadShows());
   }, []);

@@ -1,6 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 import configureStore from './store/configureStore';
 
@@ -15,7 +20,6 @@ import ShowDetails from './screens/ShowDetails/ShowDetails';
 import PageNotFound from './screens/PageNotFound/PageNotFound';
 
 // Style
-// import style from 'App.style';
 import './App.style.scss';
 
 const store = configureStore();

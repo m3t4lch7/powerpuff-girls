@@ -6,6 +6,14 @@ import Cover from '../Cover/Cover';
 
 import './style.scss';
 
+/**
+ * Shows a list of episodes.
+ *
+ * @param {Object[]} episodes - array of episodes
+ * @param {string} showId
+ *
+ * @returns {*}
+ */
 const EpisodesList = ({ episodes, showId }) => (
   <div className="EpisodesList">
     {episodes.map((episode, index) => (
