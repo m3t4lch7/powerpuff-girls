@@ -1,9 +1,9 @@
 @import '../../styles/spacing';
 
 .ShowDetails {
-  padding-top: $padding-navbar;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  padding-top: $padding-navbar;
 }

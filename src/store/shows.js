@@ -44,6 +44,7 @@ export const loadShows = () => (dispatch, getState) => {
   );
 };
 
+// Selectors
 export const getShows = createSelector(
   state => state.shows,
   (shows) => shows.list

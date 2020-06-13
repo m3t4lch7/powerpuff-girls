@@ -6,12 +6,8 @@
   &__item {
     padding: $padding-medium;
 
-    &--cover {
-    }
-
     a {
       color: $color-black;
-
       display: flex;
       flex-direction: row;
       text-decoration: none;

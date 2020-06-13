@@ -18,8 +18,6 @@ const slice = createSlice({
     },
 
     episodesReceived: (episodes, action) => {
-      // console.log(action.payload);
-
       episodes.list = action.payload;
       episodes.loading = false;
     },
@@ -33,8 +31,6 @@ const slice = createSlice({
     },
 
     episodeDetailsReceived: (episodes, action) => {
-      // console.log(action.payload);
-
       episodes.list = [action.payload];
       episodes.loading = false;
     },
@@ -77,6 +73,7 @@ export const loadEpisodeDetails = (showId, episodeId) => (dispatch, getState) =>
   );
 };
 
+// Selectors
 export const getEpisodes = createSelector(
   state => state.episodes,
   (episodes) => episodes.list

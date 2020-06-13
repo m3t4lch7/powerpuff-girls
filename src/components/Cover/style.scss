@@ -1,18 +1,29 @@
 @import '../../styles/colors';
 
+$height-image: 100vh;
+$height-image-small: 100px;
+$height-image-medium: 350px;
+
+$media-query-breakpoint-mobile: 425px;
+
+$width-image-mobile: 80%;
+$width-image-mobile-medium: 100%;
+$width-image-medium: 550px;
+$width-image-small: 150px;
+
 .Cover {
   background-color: $color-black;
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: $width-image-mobile-medium;
 
   &__image {
+    height: $height-image;
     object-fit: cover;
-    height: 100vh;
 
-    @media (max-width: 425px) {
-      width: 80%;
+    @media (max-width: $media-query-breakpoint-mobile) {
       height: auto;
+      width: $width-image-mobile;
     }
   }
 
@@ -22,17 +33,17 @@
   }
 
   &--small > &__image {
-    width: 150px;
-    height: 100px;
+    height: $height-image-small;
+    width: $width-image-small;
   }
 
   &--medium > &__image {
-    max-width: 550px;
-    max-height: 350px;
+    max-height:$height-image-medium;
+    max-width: $width-image-medium;
 
-    @media (max-width: 425px) {
-      width: 100%;
+    @media (max-width: $media-query-breakpoint-mobile) {
       height: auto;
+      width:$width-image-mobile-medium;
     }
   }
 }

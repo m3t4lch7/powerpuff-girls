@@ -1,6 +1,7 @@
 @import '../../styles/colors';
 @import '../../styles/spacing';
 
+$border-radius-item: 10px;
 $padding-item: 5px 15px;
 
 .Genres {
@@ -9,9 +10,9 @@ $padding-item: 5px 15px;
 
   &__item {
     color: $color-white;
-    border-radius: 10px;
-    padding: $padding-item;
+    border-radius: $border-radius-item;
     margin: $padding-small;
+    padding: $padding-item;
 
     &:nth-child(3n+1) {
       background-color: $color-blossom;

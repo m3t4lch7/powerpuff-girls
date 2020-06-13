@@ -1,7 +1,9 @@
 @import "../../styles/spacing";
 
+$width-episodes: 100%;
+
 .Episodes {
-  width: 100%;
+  width: $width-episodes;
 
   &__title {
     padding-left: $padding-main;

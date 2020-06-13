@@ -1,11 +1,12 @@
 @import '../../styles/colors';
 @import '../../styles/spacing';
 
+$border-radius-summary: 10px;
+
 .Summary {
   background-color: $color-logo-inner;
-  //opacity: 0.5;
+  border-radius: $border-radius-summary;
   color: $color-white;
-  padding: 0 $padding-main;
   margin: 0 $padding-main;
-  border-radius: 10px;
+  padding: 0 $padding-main;
 }

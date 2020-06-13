@@ -2,17 +2,18 @@
 @import '../../styles/spacing';
 
 $height-navbar: 50px;
+$width-navbar: 100%;
 
 .NavBar {
   align-items: center;
-  background-color: #F16BA8;
+  background-color: $color-logo-inner;
+  color: $color-white;
   display: flex;
   height: $height-navbar;
-  position: fixed;
-  width: 100%;
-  color: $color-white;
-  text-decoration: none;
   padding-left: $padding-navbar-big;
+  position: fixed;
+  text-decoration: none;
+  width: $width-navbar;
 
   &__title {
     padding-left: $padding-main;
