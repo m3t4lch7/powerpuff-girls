@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import {
-  BrowserRouter,
+  HashRouter,
   Redirect,
   Route,
   Switch,
@@ -28,18 +28,18 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
           <NavBar />
           <Switch>
+            <Route component={ShowDetails} path="/shows/:showId" exact />
+            <Route component={EpisodeDetails} path="/shows/:showId/episodes/:episodeId" exact />
             <Route path="/" exact>
               {/* Making sure we get redirected to the correct page right after we run the project */}
               <Redirect to={`/shows/${process.env.REACT_APP_SHOW_POWERPUFF_GIRLS_ID}`} />
             </Route>
-            <Route component={ShowDetails} path="/shows/:showId" exact />
-            <Route component={EpisodeDetails} path="/shows/:showId/episodes/:episodeId" exact />
-            <Route component={PageNotFound} exact />
+            <Route component={PageNotFound} />
           </Switch>
-        </BrowserRouter>
+        </HashRouter>
       </Provider>
     </div>
   );
