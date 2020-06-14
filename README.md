@@ -6,6 +6,8 @@ The state - shows & episodes are stored in Redux.
 
 For the sake of simplicity of the setup of the project - I am pushing .env file, which normally I would not push :)
 
+On my own server I used HashRouter instead of BrowserRouter, because of the server configuration.
+
 ## Info
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
