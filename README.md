@@ -1,4 +1,4 @@
-# The Powerpull Girls
+# The Powerpuff Girls
 
 This project is a demo of a TV series website.
 It includes 3 basic pages - **Page not found** page, **show** page, with list of episodes and **episode** details page.
